@@ -1,0 +1,19 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/head :: head"></head>
+<body>
+    <div th:replace="layout/header :: header"></div>
+
+    <main class="content">
+        <div th:if="${!spittle.images.empty}">
+            <span>Attachments:</span>
+            <br>
+            <img height="200px" th:each="image : ${spittle.images}" th:src="@{${'/images/' + image.fileName}}" alt="">
+        </div>
+        Id: <span th:text="${spittle.id}">Spittle Id</span><br/>
+        Message: <span th:text="${spittle.message}">Spittle Message</span><br/>
+        Time: <span th:text="${spittle.timestamp}">Spittle Time</span><br/>
+    </main>
+
+    <div th:replace="layout/footer :: footer"></div>
+</body>
+</html>

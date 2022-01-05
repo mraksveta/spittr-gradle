@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/head :: head"></head>
+<body>
+    <div th:replace="layout/header :: header"></div>
+
+    <main class="content">
+        <a th:href="@{/spittles/create}">Create a new spittle</a>
+        <h1>Spittles</h1>
+
+        <ul>
+            <li th:each="spittle : ${spittles}" th:id="${'spittle_' + spittle.id}">
+                <div class="spittleMessage" th:text="${spittle.message}">
+                    Spittle Message
+                </div>
+                <div>
+                    <span class="spittleTime" th:text="${spittle.timestamp}">Spittle Time</span>
+                    <a th:href="@{${'/spittles/' + spittle.id}}">Read more</a>
+                </div>
+                <br>
+            </li>
+        </ul>
+    </main>
+
+    <div th:replace="layout/footer :: footer"></div>
+</body>
+</html>

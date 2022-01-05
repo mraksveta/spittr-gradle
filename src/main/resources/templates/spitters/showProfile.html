@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/head :: head"></head>
+<body>
+    <div th:replace="layout/header :: header"></div>
+
+    <main class="content">
+        <h1>Profile Info</h1>
+
+        Username: <span class="username" th:text="${spitter.username}">Spitter Username</span><br/>
+        First Name: <span class="firstName" th:text="${spitter.firstName}">Spitter First Name</span><br/>
+        Last Name: <span class="lastName" th:text="${spitter.lastName}">Spitter Last Name</span>
+    </main>
+
+    <div th:replace="layout/footer :: footer"></div>
+</body>
+</html>

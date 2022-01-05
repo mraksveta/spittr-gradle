@@ -1,0 +1,24 @@
+header {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+}
+
+main.content {
+    text-align: center;
+}
+
+div.errors {
+    background-color: #ffcccc;
+    border: 2px solid red;
+}
+
+label.error {
+    color: red;
+}
+
+input.error {
+    background-color: #ffcccc;
+}

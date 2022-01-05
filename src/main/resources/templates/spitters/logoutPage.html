@@ -1,0 +1,20 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/head :: head"></head>
+<body>
+    <header th:replace="layout/header :: header"></header>
+
+
+    <main class="content">
+        <form th:action="@{/spitters/logout}" method="POST">
+            <h1>Are you sure want to log out?</h1>
+            <input type="submit" value="Yes">
+        </form>
+        <br>
+        <form th:action="@{/}">
+            <input type="submit" value="No">
+        </form>
+    </main>
+
+    <footer th:replace="layout/footer :: footer"></footer>
+</body>
+</html>

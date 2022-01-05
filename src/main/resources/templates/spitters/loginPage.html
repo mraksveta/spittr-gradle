@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/head :: head"></head>
+<body>
+    <header th:replace="layout/header :: header"></header>
+
+
+    <main class="content">
+        <form th:action="@{/spitters/login}" method="POST">
+            <div th:if="${param.error}">
+                <div class="alert alert-danger">
+                    Bad Credentials
+                </div>
+            </div>
+            <label>Username: </label><input type="text" name="username"><br>
+
+            <label>Password: </label><input type="password" name="password"><br>
+
+            <input id="remember_me" name="remember-me" type="checkbox"/>
+            <label for="remember_me" class="inline">Remember me</label>
+
+            <input type="submit" value="Login">
+            <p>Not registered yet? <a th:href="@{/spitters/register}">Register</a></p>
+        </form>
+    </main>
+
+    <footer th:replace="layout/footer :: footer"></footer>
+</body>
+</html>

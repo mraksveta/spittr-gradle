@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.6.1'
+    id 'application'
+}
+
+group 'com.github.mraksveta'
+version '1.0-SNAPSHOT'
+mainClassName = 'com.github.mraksveta.spittr.config.Spittr'
+
+repositories {
+    mavenCentral()
+}
+
+def springBootVersion = '2.6.1'
+def postgresqlJDBCDriverVersion = '42.3.1'
+def hibernateVersion = '5.6.3.Final'
+dependencies {
+    testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: springBootVersion
+
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: springBootVersion
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: springBootVersion
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: springBootVersion
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: springBootVersion
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: springBootVersion
+
+    implementation group: 'org.postgresql', name: 'postgresql', version: postgresqlJDBCDriverVersion
+
+
+//    implementation group: 'org.springframework', name: 'spring-orm', version: '5.3.13'
+
+//    implementation group: 'org.hibernate', name: 'hibernate-core', version: hibernateVersion
+//    implementation group: 'org.hibernate', name: 'hibernate-entitymanager', version: hibernateVersion
+
+}
+
+test {
+    useJUnitPlatform()
+}

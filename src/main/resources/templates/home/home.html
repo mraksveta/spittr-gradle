@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/head :: head"></head>
+<body>
+    <header th:replace="layout/header :: header"></header>
+
+    <main class="content">
+        <h1>Welcome to Spittr</h1>
+
+        <a th:href="@{/spittles}">Spittles</a>
+        <a th:href="@{/spitters/register}">Register</a>
+        <a th:href="@{/spitters/logout}">Logout</a>
+    </main>
+
+    <footer th:replace="layout/footer :: footer"></footer>
+</body>
+</html>

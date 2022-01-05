@@ -1,0 +1,20 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/head :: head"></head>
+<body>
+    <header th:replace="layout/header :: header"></header>
+
+    <main class="content">
+        <form th:action="@{/spittles}" th:object="${spittle}"
+              method="POST" enctype="multipart/form-data"> <!-- image/png,image/jpeg,image/gif -->
+            <input type="file" name="files" accept="image/png,image/jpeg,image/gif" multiple><br>
+
+            <label th:for="message">Spittle text:</label><br>
+            <textarea th:field="*{message}"></textarea><br>
+
+            <input type="submit" value="Send spittle">
+        </form>
+    </main>
+
+    <footer th:replace="layout/footer :: footer"></footer>
+</body>
+</html>
